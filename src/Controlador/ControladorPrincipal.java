@@ -69,6 +69,7 @@ public class ControladorPrincipal{
 	
 	private void abrirVentanaPedidos() {
 		ventanaPedidos.setVisible(true);
+		controladorPedidos.InitController();
 	}
 	
 	private void abrirVentanaProductos() {
@@ -85,6 +86,7 @@ public class ControladorPrincipal{
 	
 	private void abrirVentanaVentas() {
 		ventanaVentas.setVisible(true);
+		controladorVentas.InitController();
 	}
 
 }

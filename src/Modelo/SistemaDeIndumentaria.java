@@ -47,7 +47,7 @@ public class SistemaDeIndumentaria {
 		itemVenta.setProducto(producto);
 		venta.agregarItem(itemVenta);
 		ventas.add(venta);
-		cliente.getVentasCliente().add(venta);
+		//cliente.getVentasCliente().add(venta);
 		return venta;
 	}
 	
@@ -56,9 +56,10 @@ public class SistemaDeIndumentaria {
 		ItemPedido itemPedido = new ItemPedido();
 		itemPedido.setCant(cantidad);
 		itemPedido.setProducto(producto);
+	
 		pedido.agregarItem(itemPedido);
 		this.getPedidos().add(pedido);
-		proveedor.getPedidosProveedor().add(pedido);
+		//proveedor.getPedidosProveedor().add(pedido);
 		return pedido;
 	}
 	

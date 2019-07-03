@@ -4,7 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Pedido {
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
 	private int nroPedido;
+	private int cantidad;
 	private String estado;
 	private Date fecha;
 	private ArrayList<ItemPedido> itemsPedido;

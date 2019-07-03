@@ -8,6 +8,46 @@ import javax.swing.table.DefaultTableModel;
 import Modelo.Proveedor;
 
 public class VentanaPedidos extends JFrame{
+	public JTable getTable() {
+		return table;
+	}
+
+	public void setTable(JTable table) {
+		this.table = table;
+	}
+
+	public JTextField getTxtNroPedido() {
+		return txtNroPedido;
+	}
+
+	public void setTxtNroPedido(JTextField txtNroPedido) {
+		this.txtNroPedido = txtNroPedido;
+	}
+
+	public JTextField getTxtCantidad() {
+		return txtCantidad;
+	}
+
+	public void setTxtCantidad(JTextField txtCantidad) {
+		this.txtCantidad = txtCantidad;
+	}
+
+	public JComboBox<String> getBoxEstado() {
+		return boxEstado;
+	}
+
+	public void setBoxEstado(JComboBox<String> boxEstado) {
+		this.boxEstado = boxEstado;
+	}
+
+	public JComboBox<String> getBoxProducto() {
+		return boxProducto;
+	}
+
+	public void setBoxProducto(JComboBox<String> boxProducto) {
+		this.boxProducto = boxProducto;
+	}
+
 	/**
 	 * 
 	 */
@@ -16,11 +56,11 @@ public class VentanaPedidos extends JFrame{
 	}
 
 	public JComboBox<String> getBoxProveedor() {
-		return comboBoxProveedores;
+		return boxProveedor;
 	}
 	
 	public void setBoxProveedor(JComboBox<String> comboBox) {
-		this.comboBoxProveedores  = comboBox;
+		this.boxProveedor  = comboBox;
 	}
 	
 	public JTextField getTxtProveedor() {
@@ -40,9 +80,9 @@ public class VentanaPedidos extends JFrame{
 	private JTextField txtProveedor;
 	JButton btnRegistrar;
 	private JScrollPane scrollPane;
-    private JComboBox<String> comboBoxProveedores;
-    private JComboBox<String> comboBoxEstado;
-    private JComboBox<String> comboBoxProductos;
+	private JComboBox<String> boxProveedor;
+	private JComboBox<String> boxEstado;
+	private JComboBox<String> boxProducto;
 
     private String[] proveedoresPrueba;
 
@@ -70,27 +110,11 @@ public class VentanaPedidos extends JFrame{
 			JLabel lblProveedor = new JLabel("Proveedor:");
 			lblProveedor.setBounds(10, 11, 129, 14);
 			getContentPane().add(lblProveedor);
+
 			
-			proveedoresPrueba = new String[]{"Proveedor 1", "Proveedor 2", "Proveedor 3","Proveedor 4", "Proveedor 5"};
-			comboBoxProveedores = new JComboBox<>(proveedoresPrueba);
-			comboBoxProveedores.setBounds(149, 8, 194, 20);
-			getContentPane().add(comboBoxProveedores);
-/*
-			txtProveedor = new JTextField();
-			txtProveedor.setColumns(10);
-			txtProveedor.setBounds(149, 98, 194, 20);
-			getContentPane().add(txtProveedor);
-			*/
 			JLabel lblEstado = new JLabel("Estado:");
 			lblEstado.setBounds(10, 39, 129, 14);
-			getContentPane().add(lblEstado);
-			
-			String[] estados = new String[]{"En tramite","Listo"};
-			comboBoxEstado = new JComboBox<>(estados);
-			comboBoxEstado.setBounds(149, 39, 194, 20);
-			getContentPane().add(comboBoxEstado);
-			
-			
+			getContentPane().add(lblEstado);	
 			
 			JLabel lblNroPedido = new JLabel("NroPedido:");
 			lblNroPedido.setBounds(10, 70, 129, 14);
@@ -104,19 +128,12 @@ public class VentanaPedidos extends JFrame{
 			JLabel lblCantidad = new JLabel("Cantidad:");
 			lblCantidad.setBounds(10, 133, 129, 14);
 			getContentPane().add(lblCantidad);
-			
-			
+				
 			
 			JLabel lblProduto = new JLabel("Producto");
 			lblProduto.setBounds(10, 101, 129, 14);
 			getContentPane().add(lblProduto);
-			
-			String[] productosPrueba = new String[]{"Producto 1", "Producto 2"};
-			comboBoxProductos = new JComboBox<>(productosPrueba);
-			comboBoxProductos.setBounds(149, 98, 194, 20);
-			getContentPane().add(comboBoxProductos);
-			
-		
+				
 			
 			txtCantidad = new JTextField();
 			txtCantidad.setColumns(10);
@@ -126,6 +143,18 @@ public class VentanaPedidos extends JFrame{
 			btnRegistrar = new JButton("Registrar");
 			btnRegistrar.setBounds(353, 7, 89, 23);
 			getContentPane().add(btnRegistrar);
+
+			boxProveedor = new JComboBox();
+			boxProveedor.setBounds(149, 8, 194, 20);
+			getContentPane().add(boxProveedor);
+			
+			boxEstado = new JComboBox<String>();
+			boxEstado.setBounds(149, 36, 194, 20);
+			getContentPane().add(boxEstado);
+			
+			boxProducto = new JComboBox<String>();
+			boxProducto.setBounds(149, 98, 194, 20);
+			getContentPane().add(boxProducto);
 			
 		
 	}
