@@ -9,6 +9,25 @@ public class VentanaPedidos extends JFrame{
 	/**
 	 * 
 	 */
+	public JButton getBtnRegistrar() {
+		return btnRegistrar;
+	}
+
+	public JComboBox<String> getBoxProveedor() {
+		return box;
+	}
+	
+	public void setBoxProveedor(JComboBox<String> comboBox) {
+		this.box  = comboBox;
+	}
+	
+	public JTextField getTxtProveedor() {
+		return txtProveedor;
+	}
+	public void setTxtProveedor(JTextField txtProveedor) {
+		this.txtProveedor = txtProveedor;
+	}
+	
 	private static final long serialVersionUID = 1L;
 	//TITULO
 	private String titulo = "Pedidos";
@@ -49,6 +68,15 @@ public class VentanaPedidos extends JFrame{
 			box = new JComboBox<>(distros);
 			box.setBounds(149, 67, 194, 20);
 			getContentPane().add(box);
+
+			txtProveedor = new JTextField();
+			txtProveedor.setColumns(10);
+			txtProveedor.setBounds(149, 98, 194, 20);
+			getContentPane().add(txtProveedor);
+			
+			btnRegistrar = new JButton("Registrar");
+			btnRegistrar.setBounds(353, 7, 89, 23);
+			getContentPane().add(btnRegistrar);
 		
 	}
 }
