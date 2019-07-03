@@ -36,12 +36,13 @@ public class VentanaPedidos extends JFrame{
 	//BOTONES
 	private JTable table;
 	private JTextField txtNroPedido;
-	private JTextField txtFecha;
+	private JTextField txtCantidad;
 	private JTextField txtProveedor;
 	JButton btnRegistrar;
 	private JScrollPane scrollPane;
     private JComboBox<String> comboBoxProveedores;
     private JComboBox<String> comboBoxEstado;
+    private JComboBox<String> comboBoxProductos;
 
     private String[] proveedoresPrueba;
 
@@ -62,7 +63,7 @@ public class VentanaPedidos extends JFrame{
 				new Object[][] {
 				},
 				new String[] {
-					"NroPedido", "Estado", "Fecha", "Pedidos", "Proveedor"
+					"NroPedido", "Estado", "Fecha", "Producto","Cantidad", "Proveedor"
 				}
 			));
 			
@@ -80,25 +81,47 @@ public class VentanaPedidos extends JFrame{
 			txtProveedor.setBounds(149, 98, 194, 20);
 			getContentPane().add(txtProveedor);
 			*/
+			JLabel lblEstado = new JLabel("Estado:");
+			lblEstado.setBounds(10, 39, 129, 14);
+			getContentPane().add(lblEstado);
+			
 			String[] estados = new String[]{"En tramite","Listo"};
 			comboBoxEstado = new JComboBox<>(estados);
 			comboBoxEstado.setBounds(149, 39, 194, 20);
 			getContentPane().add(comboBoxEstado);
 			
 			
-			JLabel lblEstado = new JLabel("Estado:");
-			lblEstado.setBounds(10, 39, 129, 14);
-			getContentPane().add(lblEstado);
-			
-			txtNroPedido = new JTextField();
-			txtNroPedido.setColumns(10);
-			txtNroPedido.setBounds(149, 67, 194, 20);
-			getContentPane().add(txtNroPedido);
 			
 			JLabel lblNroPedido = new JLabel("NroPedido:");
 			lblNroPedido.setBounds(10, 70, 129, 14);
 			getContentPane().add(lblNroPedido);
 			
+			txtNroPedido = new JTextField();
+			txtNroPedido.setColumns(10);
+			txtNroPedido.setBounds(149, 67, 194, 20);
+			getContentPane().add(txtNroPedido);
+
+			JLabel lblCantidad = new JLabel("Cantidad:");
+			lblCantidad.setBounds(10, 133, 129, 14);
+			getContentPane().add(lblCantidad);
+			
+			
+			
+			JLabel lblProduto = new JLabel("Producto");
+			lblProduto.setBounds(10, 101, 129, 14);
+			getContentPane().add(lblProduto);
+			
+			String[] productosPrueba = new String[]{"Producto 1", "Producto 2"};
+			comboBoxProductos = new JComboBox<>(productosPrueba);
+			comboBoxProductos.setBounds(149, 98, 194, 20);
+			getContentPane().add(comboBoxProductos);
+			
+		
+			
+			txtCantidad = new JTextField();
+			txtCantidad.setColumns(10);
+			txtCantidad.setBounds(149, 129, 194, 20);
+			getContentPane().add(txtCantidad);
 			
 			btnRegistrar = new JButton("Registrar");
 			btnRegistrar.setBounds(353, 7, 89, 23);
