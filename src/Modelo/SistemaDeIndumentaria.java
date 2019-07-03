@@ -8,6 +8,7 @@ public class SistemaDeIndumentaria {
 	private ArrayList<Vendedor> vendedores;
 	private ArrayList<Venta> ventas;
 	private ArrayList<Pedido> pedidos;
+	private ArrayList<Producto> productos;
 	int nroVenta = 0;
 	int nroPedido = 0;
 	
@@ -19,7 +20,7 @@ public class SistemaDeIndumentaria {
     	clientes = new ArrayList<Cliente>();
     	proveedores = new ArrayList<Proveedor>();
     	vendedores = new ArrayList<Vendedor>();
-    	
+    	productos = new ArrayList<Producto>();
     }
 
 	public static SistemaDeIndumentaria getInstance() 
@@ -115,6 +116,12 @@ public class SistemaDeIndumentaria {
 		
 	}
 	
+	public void agregarProducto(int codigo, String color, String descripcion, String nombre, float precio, int stock, String talle) {
+		Producto producto = new Producto(codigo, color, descripcion, nombre, precio, stock, talle);
+		this.productos.add(producto);
+		
+	}
+	
 	public void modificarProveedor(String nombre, String mail, String telefono, String cuil) {
 		for(Proveedor proveedor: proveedores){
 			if(proveedor.soyElProveedor(cuil)){
@@ -173,6 +180,14 @@ public class SistemaDeIndumentaria {
 
 	public ArrayList<Pedido> getPedidos() {
 		return pedidos;
+	}
+
+	public void setProductos(ArrayList<Producto> productos) {
+		this.productos = productos;
+	}
+	
+	public ArrayList<Producto> getProductos() {
+		return productos;
 	}
 
 	public void setPedidos(ArrayList<Pedido> pedidos) {

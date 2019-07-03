@@ -5,12 +5,7 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class VentanaClientes extends JFrame {
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-
 	private String titulo = "Clientes";
 	private JTable table;
 	private JTextField txtCuil;

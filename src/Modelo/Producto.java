@@ -9,6 +9,20 @@ public class Producto {
 	private float precio;
 	private int stock;
 	
+
+
+	public Producto(int codigo, String color, String descripcion, String nombre, float precio, int stock,
+			String talle) {
+		super();
+		this.codigo = codigo;
+		this.color = color;
+		Descripcion = descripcion;
+		this.nombre = nombre;
+		this.precio = precio;
+		this.stock = stock;
+		this.talle = talle;
+	}
+
 	public void modificarPrecio(float precio){
 		this.setPrecio(precio);
 	}
