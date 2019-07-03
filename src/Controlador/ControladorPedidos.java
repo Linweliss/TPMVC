@@ -22,19 +22,11 @@ public class ControladorPedidos {
 	}
 
 	private void registrarPedido() {
-		System.out.println("Holas");
-		setBox(ventanaPedidos.getBoxProveedor());
 
 	}
 	private void comboBox() {
-		if(	ventanaPedidos.getBoxProveedor().getSelectedItem().equals("Ubuntu")) {
-			ventanaPedidos.getTxtProveedor().setText("Ubuntu");
+		/*ventanaPedidos.getTxtProveedor().setText(ventanaPedidos.getBoxProveedor().getSelectedItem().toString());*/
 
-		}
-		
 	}
-	private void setBox(JComboBox<String> box) {
-		box = new JComboBox<>(new String[]{"Ubunssstu", "Redddddhat", "Arch ","Debian", "Mint"});
-		ventanaPedidos.setBoxProveedor(box);
-	}
+
 }

@@ -40,12 +40,11 @@ public class VentanaPedidos extends JFrame{
 	JButton btnRegistrar;
 	private JScrollPane scrollPane;
     private JComboBox<String> box;
-    private String[] distros;
+    private String[] proveedoresPrueba;
 
 	//
 	public VentanaPedidos(){
 	
-			//this.setVisible(true);
 			this.setTitle(titulo);
 			this.setSize(480,401);
 			getContentPane().setLayout(null);
@@ -60,20 +59,24 @@ public class VentanaPedidos extends JFrame{
 				new Object[][] {
 				},
 				new String[] {
-					"Nombre", "Cuil", "Localidad", "Mail", "Tel\u00E9fono"
+					"NroPedido", "Estado", "Fecha", "Pedidos", "Proveedor"
 				}
 			));
 			
-			distros = new String[]{"Ubuntu", "Redhat", "Arch ","Debian", "Mint"};
-			box = new JComboBox<>(distros);
-			box.setBounds(149, 67, 194, 20);
+			JLabel lblProveedor = new JLabel("Proveedor:");
+			lblProveedor.setBounds(10, 11, 129, 14);
+			getContentPane().add(lblProveedor);
+			
+			proveedoresPrueba = new String[]{"Proveedor 1", "Proveedor 2", "Proveedor 3","Proveedor 4", "Proveedor 5"};
+			box = new JComboBox<>(proveedoresPrueba);
+			box.setBounds(149, 8, 194, 20);
 			getContentPane().add(box);
-
+/*
 			txtProveedor = new JTextField();
 			txtProveedor.setColumns(10);
 			txtProveedor.setBounds(149, 98, 194, 20);
 			getContentPane().add(txtProveedor);
-			
+			*/
 			btnRegistrar = new JButton("Registrar");
 			btnRegistrar.setBounds(353, 7, 89, 23);
 			getContentPane().add(btnRegistrar);

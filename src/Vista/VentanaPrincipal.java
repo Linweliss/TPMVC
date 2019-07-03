@@ -86,6 +86,7 @@ public class VentanaPrincipal extends JFrame{
 		//this.setVisible(true);
 		this.setTitle(titulo);
 		this.setSize(300,300);
+		this.setResizable(false);
 		
 		Container panel=this.getContentPane();
 		//LABELS
