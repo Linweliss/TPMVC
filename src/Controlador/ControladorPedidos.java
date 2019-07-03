@@ -1,5 +1,7 @@
 package Controlador;
 
+import java.awt.event.ActionListener;
+
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
@@ -18,8 +20,10 @@ public class ControladorPedidos {
 	}
 
 	public void InitController() {
+		for( ActionListener al : ventanaPedidos.getBtnRegistrar().getActionListeners() ) {
+			ventanaPedidos.getBtnRegistrar().removeActionListener( al );
+		}
 		ventanaPedidos.getBtnRegistrar().addActionListener(e -> registrarPedido());
-		ventanaPedidos.getBoxProveedor().addActionListener(e -> comboBox());
 		refrescarCombos();
 		refresh();
 
@@ -43,10 +47,7 @@ public class ControladorPedidos {
 		this.sistemaDeIndumentaria.agregarPedido(proveedor, producto, Integer.parseInt(ventanaPedidos.getTxtCantidad().getText()));
 		refresh();
 	}
-	private void comboBox() {
-		/*ventanaPedidos.getTxtProveedor().setText(ventanaPedidos.getBoxProveedor().getSelectedItem().toString());*/
 
-	}
 	
 	private void refrescarCombos(){
 		ventanaPedidos.getBoxEstado().removeAllItems();
@@ -70,8 +71,10 @@ public class ControladorPedidos {
 			matriz[i][0]=String.valueOf(sistemaDeIndumentaria.getPedidos().get(i).getNroPedido());
 			matriz[i][1]=sistemaDeIndumentaria.getPedidos().get(i).getEstado();
 			matriz[i][2]=String.valueOf(sistemaDeIndumentaria.getPedidos().get(i).getFecha());
-			matriz[i][3]=String.valueOf(sistemaDeIndumentaria.getPedidos().get(i).getCantidad());
-			matriz[i][4]=sistemaDeIndumentaria.getPedidos().get(i).getProveedor().getNombre();
+			matriz[i][3]=sistemaDeIndumentaria.getPedidos().get(i).getItemsPedido().get(0).getProducto().getNombre();
+			matriz[i][4]=String.valueOf(sistemaDeIndumentaria.getPedidos().get(i).getItemsPedido().get(0).getCant());
+			matriz[i][5]=sistemaDeIndumentaria.getPedidos().get(i).getProveedor().getNombre();
+
 			
 		}
 		

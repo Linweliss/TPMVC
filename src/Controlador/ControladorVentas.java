@@ -1,5 +1,7 @@
 package Controlador;
 
+import java.awt.event.ActionListener;
+
 import Modelo.Cliente;
 import Modelo.Producto;
 import Modelo.SistemaDeIndumentaria;
@@ -16,6 +18,10 @@ public class ControladorVentas {
 	}
 
 	public void InitController() {
+		for( ActionListener al : ventanaVentas.getBtnRegistrar().getActionListeners() ) {
+			ventanaVentas.getBtnRegistrar().removeActionListener( al );
+		}
+		
 		ventanaVentas.getBtnRegistrar().addActionListener(e -> registrarVenta());
 		refrescarCombos();
 		refresh();
